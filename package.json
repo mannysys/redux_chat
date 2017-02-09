@@ -1,0 +1,39 @@
+{
+  "name": "redux_chat",
+  "version": "1.0.0",
+  "description": "Redux+React+Express+Socket.io构建实时聊天应用",
+  "main": "index.js",
+  "scripts": {
+    "testServer": "mocha --compilers js:babel-core/register --require ./test/serverTestHelper.js ./test/server --recursive",
+    "testServer:watch": "npm run testServer -- --watch"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mannysys/redux_chat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mannysys/redux_chat/issues"
+  },
+  "homepage": "https://github.com/mannysys/redux_chat#readme",
+  "dependencies": {
+    "redux": "^3.6.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
+    "immutable": "^3.8.1",
+    "mocha": "^3.2.0"
+  }
+}

@@ -1,0 +1,22 @@
+1、
+npm init -y
+npm install redux --save
+npm install babel-cli babel-core babel-preset-es2015 --save-dev
+npm install mocha chai chai-immutable immutable --save-dev   #测试框架
+
+2、
+新建文件 serverTestHelper.js 测试帮助文件
+添加package.json中脚本测试命令，使用mocha做测试，在测试之前指定需要用到这个serverTestHelper.js文件做初始化，然后指定目录下所有测试文件跑一遍测试
+"testServer": "mocha --compilers js:babel-core/register --require ./test/serverTestHelper.js ./test/server --recursive",
+文件改变后自动跑一边测试
+"testServer:watch": "npm run testServer -- --watch"
+
+3、添加 babel 设置，在 babel 版本6以后可以放到package.json里设置
+"babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+
+4、安装模块生成独立id
+npm install --save uuid
