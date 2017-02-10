@@ -1,4 +1,6 @@
-
+/*
+ 单元测试
+ */
 import { expect } from "chai"
 import { v1 } from "uuid"
 import { fromJS,Map,List } from "immutable"
@@ -22,7 +24,42 @@ describe("rooms", () => {
     })
     //再次检查，getIn是获取生成的数据，获取数组中第2个房间数据
     expect(nextNextState.getIn(["rooms",1,"name"])).to.equal("second room")
-
   })
 
+
+  const mockState = fromJS({
+    rooms: [{name:"first room", id:v1(), owner:"eisneim"}]
+  })
+
+  it("能被创建者删除", () => {
+    const state = removeRoom(mockState, {
+      id: mockState.getIn(["rooms",0,"id"]),
+      user: "eisneim"
+    })
+    //检测数组是否是空的
+    expect(state.get("rooms").size).to.equal(0)
+  })
+
+  it("不能被其他人删除", () => {
+    const state = removeRoom(mockState, {
+      id: mockState.getIn(["rooms",0,"id"]),
+      user: "terry"
+    })
+    //检测数组是否是空的
+    expect(state.get("rooms").size).to.equal(1)
+  })
+
+
+
 })
+
+
+
+
+
+
+
+
+
+
+
