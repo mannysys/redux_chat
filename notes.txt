@@ -20,3 +20,18 @@ npm install mocha chai chai-immutable immutable --save-dev   #测试框架
 
 4、安装模块生成独立id
 npm install --save uuid
+
+5、
+npm install --save express ejs
+
+.\node_modules\.bin\babel-node src\server\server.js
+
+
+
+
+
+
+
+
+
+

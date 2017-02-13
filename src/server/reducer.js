@@ -1,5 +1,5 @@
 /**
- * Created by zhoujialin on 2017/2/10.
+ * 用户动作调度
  */
 import {
   addRoom,
