@@ -7,6 +7,10 @@ export default function listenWebSocket(io, store) {
 
     socket.emit("state", store.getState())
 
+    socket.on("action", action => {
+      console.log("get client action")
+    })
+
     socket.on('disconnect', () => {
       console.log('user disconnected')
     })

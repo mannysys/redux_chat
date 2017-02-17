@@ -27,6 +27,43 @@ npm install --save express ejs
 .\node_modules\.bin\babel-node src\server\server.js
 
 
+6、设置 webpack
+
+npm install --save-dev webpack webpack-dev-server
+npm install --save-dev babel-loader babel-preset-react react-hot-loader
+npm install --save react react-dom react-mixin react-redux socket.io-client
+
+为了将最后js文件合并到一个bundle里面使用 socket.io-client
+
+
+7、
+根据自己的nodejs版本选择jsDOM的版本
+https://github.com/tmpvar/jsdom
+npm install --save-dev jsdom@5 react-addons-test-utils
+
+
+8、
+因为我们使用的是immutable js对象，使用react-addons-pure-render-mixin 使渲染的更加的快性能提高
+作用就是在react生命周期shouldComponentUpdate方法里面去进行判断，如果2个对象的值相等的话不渲染 ，不相等的话就重新渲染组件
+
+npm install --save react-addons-pure-render-mixin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
